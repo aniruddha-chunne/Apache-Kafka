@@ -23,6 +23,8 @@ public class LocationController
     {
         this.kafkaService.updateLocation("(" + Math.round(Math.random()*100) + "," + Math.round(Math.random()*100) + ")");
         System.out.println("LocationUpdated");
+        String a = new ResponseEntity<>(Map.of("message" , "Location Updated"), HttpStatus.OK).toString();
+        System.out.println(a);
         return new ResponseEntity<>(Map.of("message" , "Location Updated"), HttpStatus.OK);
 
     }
